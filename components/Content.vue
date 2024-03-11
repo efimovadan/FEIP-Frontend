@@ -34,11 +34,12 @@
 }
 .content{
     margin-left: 25%;
+    
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .banner {
-    @include card(rgb(0, 156, 0), 50%, 50%);
+    @include card(rgb(0, 156, 0), 75%, 50%);
     color: white;
     
     font-weight: 50;
