@@ -1,13 +1,15 @@
 <template>
-    <div class="content">
-        <div class="banner">
-            Banner
-        </div>
-        <h1 class="hello">Hello, world!</h1>
-        <p class="look">Look at my website</p>
-        <div class="cards">
-            <div class="card">Here</div>
-            <div class="card">And here</div>
+    <div class="main">
+        <div class="content">
+            <div class="banner">
+                Banner
+            </div>
+            <h1 class="hello">Hello, world!</h1>
+            <p class="look">Look at my website</p>
+            <div class="cards">
+                <div class="card">Here</div>
+                <div class="card">And here</div>
+            </div>
         </div>
     </div>
 </template>
@@ -32,10 +34,12 @@
     font-family: var(--font-title);
     font-weight: bold;
 }
+.main {
+    background-color: rgb(138, 138, 138);
+    margin:0;
+}
 .content{
     margin-left: 25%;
-    
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 .banner {
