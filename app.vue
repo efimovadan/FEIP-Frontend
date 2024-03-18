@@ -1,27 +1,24 @@
 <template>
-  <h1 class="montserrat, color-blue">Hello, world!</h1>
-  <h3 class="open-sans, color-red">Strawberry</h3>
+  <Header/>
+  <Content/>
+  <Footer/>
 </template>
 
-<script>
-console.log("Hello, world!");
+<script setup>
+import Header from '~/components/Header.vue'
+import Content from '~/components/Content.vue'
+import Footer from '~/components/Footer.vue'
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+<style lang="scss">
+:root {
+  --font-title: "Open sans", sans-serif;
+  --font-text: Montserrat, sans-serif;
 
-.color-red {
-  color: rgb(226, 41, 41);
-}
-.color-blue {
-  color: rgb(70, 84, 233);
-}
-.montserrat {
-  font-family: Montserrat;
+   font-family: var(--font-text);
 }
 
-.open-sans {
-  font-family: "Open sans";
+body {
+  margin: 0px;
 }
 </style>
