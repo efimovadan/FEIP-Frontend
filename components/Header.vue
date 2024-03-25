@@ -56,6 +56,7 @@
     height: 49px;
     width: 204px;
     border-radius: 10px;
+    border-color: #029F59;
     background: #029F59;
     color: #FFFFFF;
     font-family: var(--font-text);
