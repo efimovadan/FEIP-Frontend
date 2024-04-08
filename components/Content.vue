@@ -1,8 +1,8 @@
 <template>
-    <div class="main">
+    <main class="main">
         <div class="content">
-
+            <a>Hello, World!</a>
         </div>
-    </div>
+    </main>
 </template>
-
+<style lang="scss"></style>

@@ -17,7 +17,7 @@
     </header>
 </template>
 
-<style>
+<style lang='scss'>
 
 .header {
     padding-left: 88px;
