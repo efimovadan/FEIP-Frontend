@@ -18,13 +18,59 @@
 </template>
 
 <style lang='scss'>
-
+@mixin for-phone-only {
+  @media (max-width: 350px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (max-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (max-width: 900px) { @content; }
+}
+@mixin for-telephone {
+  @media (max-width: 1070px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (max-width: 1800px) { @content; }
+}
 .header {
     padding-left: 88px;
     height: 97px;
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
+
+    @include for-phone-only {
+        padding-left: 16px;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-left: 32px;
+    }
+
+    @include for-tablet-landscape-up {
+        padding-left: 64px;
+    }
+
+    @include for-desktop-up {
+        padding-left: 88px;
+    }
+    @include for-telephone  {
+        padding-left: 16px;
+    }
+}
+
+.menu {
+    @include for-phone-only {
+        display: none;
+    }
+
+    @include for-tablet-portrait-up {
+        display: flex;
+    }
 }
 .log-menu {
     gap: 80px;
@@ -36,6 +82,17 @@
     list-style-type: none;
     display: flex;
     align-items: center;  
+    @include for-tablet-landscape-up {
+        flex-wrap: wrap;
+    }
+    @include for-telephone  {
+        display: none;
+    }
+
+    @include for-desktop-up   {
+        flex-wrap: wrap;
+    }
+    
 }
 .list-element {
     margin-right: 24px;
@@ -45,12 +102,18 @@
     font-family: var(--font-title);
 }
 .telephone {
-    padding-left: 254px;
     padding-right: 8px;
+    @include for-tablet-landscape-up {
+        display: none;
+    }
 }
 .number {
     font-family: var(--font-text);
     padding-right: 24px;
+    width: 158px;
+    @include for-tablet-landscape-up {
+        display: none;
+    }
 }
 .button {
     height: 49px;
@@ -62,9 +125,26 @@
     font-family: var(--font-text);
 }
 .contacts {
-    /* padding-right: 88px; */
-    float: right;
+    // float: right;
+    display: flex;
+    align-items: center;
     margin-left: auto;
     padding-right: 88px;
+    @include for-telephone  {
+        padding-right: 16px;
+    }
+
+
 }
+
+// @media screen and (max-width: 350){ 
+//     .header {
+//         padding-left: 16px;
+//     }
+//     .menu {
+//         display: none;
+//     }
+// }
+
+
 </style>
