@@ -11,14 +11,12 @@
             </div>
             <div class="nav-footer">
                 <ul class="menu-list-footer">
-                    <li class="list-element-footer"><span href="" class="element-footer">Реализованные проекты</span></li>
-                    <li class="list-element-footer"><span href="" class="element-footer">Новости</span></li>
-                    <li class="list-element-footer"><span href="" class="element-footer">Контакты</span></li>
+                    <li class="list-element-footer"><a href="" class="element-footer">Реализованные проекты</a></li>
+                    <li class="list-element-footer"><a href="" class="element-footer">Новости</a></li>
+                    <li class="list-element-footer"><a href="" class="element-footer">Контакты</a></li>
                 </ul>
-                
-            
             </div>
-            <div class="nav-footer">
+            <div class="nav-footer1">
                 <ul class="menu-list-footer">
                     <li class="list-element-footer">
                     <img src="~/assets/img/telephone.png" alt="telephone" class="nav-img"/>
@@ -34,18 +32,34 @@
                     </li>
                 </ul>   
             </div>
-            
         </div>
         <div class="zagdom-footer-links">
             <a class="zag">© Загдом, 2021</a>
             <a class="zag-pol">Политика конфиденциальности</a>
             <a class="zag-user">Пользовательское соглашение</a>
         </div>
-        
     </footer>
 </template>
 
 <style lang='scss'>
+@mixin for-phone-only {
+  @media (max-width: 350px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (max-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (max-width: 900px) { @content; }
+}
+@mixin for-telephone {
+  @media (max-width: 1070px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (max-width: 1800px) { @content; }
+}
 
 .button-footer {
     height: 49px;
@@ -57,13 +71,27 @@
     font-family: var(--font-text);
     float: right;
     margin-left: auto;
-    margin-right: 176px;
+    margin-right: 87.5px;
+    margin-left: auto;
+
+    @include for-telephone {
+        margin-left: 0;
+    }
 }
 .nav-img {
     margin-right: 8px;
 }
 .nav-footer {
     margin-right: 154px;
+    @include for-desktop-up {
+        margin-right: 90px;
+    }
+}
+
+.nav-footer1 {
+    @include for-desktop-up {
+        margin-right: 90px;
+    }
 }
 .footer-contacts {
     padding-left: 122px;
@@ -77,34 +105,54 @@
 .footer-up {   
     display: flex;
     flex-direction: row;
+    order: -1;
+    @include for-telephone {
+        display: flex;
+        flex-direction: column;
+    }
 }
 .zagdom-footer-left {
     margin-right: 154px;
     display: flex;
     flex-direction: column;
+    @include for-desktop-up {
+        margin-right: 90px;
+    }
 }
 .zagdom-footer-links {
     color: #FFFFFF;
     font-family: var(--font-title);
     font-weight: 400;
     opacity: 60%;
+
+    @include for-telephone {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 20px;
+    }
 }
 .zag {
     margin-right: 205px;
+    @include for-desktop-up {
+        margin-right: 90px;
+    }
 }
 .zag-pol {
     margin-right: 99px;
 }
 .footer {
     padding-left: 88px;
-    padding-top: 36.98px;
+    padding-top: 37px;
     margin: 0;
     background-color:#254741;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000; 
-    height: 246px;
+    min-height: 246px;
+
+    @include for-telephone {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
 }
 
 .list-element-footer {
@@ -113,6 +161,7 @@
 .element-footer {
     color: #FFFFFF;
     font-family: var(--font-title);  
+    text-decoration: none;
 }
 .footer-logo {
     margin-right: 9.67px;

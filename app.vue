@@ -1,13 +1,9 @@
 <template>
-  <Header/>
-  <Content/>
-  <Footer/>
+  <MyComponent/>
 </template>
 
 <script setup>
-import Header from '~/components/Header.vue'
-import Content from '~/components/Content.vue'
-import Footer from '~/components/Footer.vue'
+import MyComponent from './components/MyComponent.vue';
 </script>
 
 <style lang="scss">
@@ -16,6 +12,12 @@ import Footer from '~/components/Footer.vue'
   --font-text: Montserrat, sans-serif;
 
    font-family: var(--font-text);
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
 }
 
 body {
